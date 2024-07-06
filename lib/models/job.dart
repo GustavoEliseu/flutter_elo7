@@ -44,6 +44,5 @@ class Job extends Equatable {
   factory Job.fromJson(String source) => Job.fromMap(json.decode(source));
 
   @override
-  // TODO: implement props
   List<Object?> get props => [title, type, level, location, isActive];
 }
