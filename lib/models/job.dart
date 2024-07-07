@@ -8,7 +8,7 @@ class Job extends Equatable {
   final String? location;
   final bool isActive;
 
-  Job(
+  const Job(
       {this.location,
       required this.title,
       required this.type,

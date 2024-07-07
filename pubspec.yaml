@@ -58,11 +58,29 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: Museo Sans
+      fonts:
+        - asset: assets/fonts/MuseoSans_500.otf
+        - asset: assets/fonts/MuseoSans_500_Italic.otf
+        - asset: assets/fonts/MuseoSans_700.otf
+        - asset: assets/fonts/MuseoSans_900.otf
+        - asset: assets/fonts/MuseoSans-100.otf
+        - asset: assets/fonts/MuseoSans-300.otf
+        - asset: assets/fonts/MuseoSans-300Italic.otf
+        - asset: assets/fonts/MuseoSans-100Italic.otf
+        - asset: assets/fonts/MuseoSans-700Italic.otf
+        - asset: assets/fonts/MuseoSans-900Italic.otf
+          weight: 700
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
+
+  
 
   # To add assets to your application, add an assets section, like this:
   # assets:

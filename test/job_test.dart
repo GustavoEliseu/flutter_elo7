@@ -7,13 +7,13 @@ void main() {
       """{"title":"especialista de fp&a","type":"financeiro","level":"especialista","location":"são paulo, sp, brasil","is_active":true}""";
   const String jobJson2 =
       """{"title":"pessoa desenvolvedora mobile (android e ios)","type":"engenharia","level":"senior","location":null,"is_active": false}""";
-  Job job = Job(
+  Job job = const Job(
       title: "especialista de fp&a",
       type: "financeiro",
       level: "especialista",
       location: "são paulo, sp, brasil",
       isActive: true);
-  Job job2 = Job(
+  Job job2 = const Job(
       title: "pessoa desenvolvedora mobile (android e ios)",
       type: "engenharia",
       level: "senior",
