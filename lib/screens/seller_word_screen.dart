@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/dimens.dart';
 import 'package:flutter_elo7/constants/strings.dart';
+import 'package:flutter_elo7/constants/text_style.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
-import 'package:flutter_elo7/widgets/rounded_image.dart';
+import 'package:flutter_elo7/widgets/rounded_corners_image.dart';
 
 class SellerWordWidget extends StatelessWidget {
   const SellerWordWidget({super.key});
@@ -20,33 +21,21 @@ class SellerWordWidget extends StatelessWidget {
               width: ProjectSizes.screenWidth,
               child: Text(Strings.sellerWord,
                   textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: FontSizes.bodyLarge,
-                        fontFamily: 'Museo Sans',
-                        fontWeight: FontWeight.w600,
-                        color: UIColor.textBlack,
-                      ))),
+                  style: CustomTextStyle.museo(
+                      context, FontSizes.bodyLarge, FontWeight.w600))),
           SizedBox(
               width: ProjectSizes.screenWidth,
               child: Text(Strings.sedRutrum,
                   textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: FontSizes.bodyMedium,
-                        fontFamily: 'Museo Sans',
-                        fontWeight: FontWeight.w600,
-                        color: UIColor.textYellow,
-                      ))),
+                  style: CustomTextStyle.museo(context, FontSizes.bodyMedium,
+                      FontWeight.w600, UIColor.textYellow))),
           const SizedBox(height: ProjectSizes.smallPadding),
           SizedBox(
               width: ProjectSizes.screenWidth,
               child: Text(Strings.donecInSeller,
                   textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: FontSizes.bodySmall,
-                        fontFamily: 'Museo Sans',
-                        fontWeight: FontWeight.w400,
-                        color: UIColor.textBlack,
-                      ))),
+                  style: CustomTextStyle.museo(
+                      context, FontSizes.bodySmall, FontWeight.w400))),
         ]));
   }
 }

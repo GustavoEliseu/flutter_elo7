@@ -12,6 +12,7 @@ class ProjectSizes {
 
 //Optei por definir o tamanho fixo e não para garantir que os textos ficariam no mesmo formato do figma.
   static const double screenWidth = 328;
+  static const double circleImageSize = 200;
   static const double largePadding = 40;
   static const double mediumPadding = 32;
   static const double smallPadding = 24;

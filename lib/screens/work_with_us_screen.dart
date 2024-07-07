@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/dimens.dart';
 import 'package:flutter_elo7/constants/strings.dart';
+import 'package:flutter_elo7/constants/text_style.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
 import 'package:flutter_elo7/widgets/image_with_text.dart';
 
@@ -24,12 +25,8 @@ class WorkWithUsWidget extends StatelessWidget {
                   child: Text(
                 Strings.lorem,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: FontSizes.bodySmall,
-                      fontFamily: 'Museo Sans',
-                      fontWeight: FontWeight.w400,
-                      color: UIColor.textBlack,
-                    ),
+                style: CustomTextStyle.museo(
+                    context, FontSizes.bodySmall, FontWeight.w400),
               ))),
           const SizedBox(
               height: 45, //24 top + 24bottom + 1
@@ -38,12 +35,8 @@ class WorkWithUsWidget extends StatelessWidget {
           InkWell(
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(Strings.openJobs,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontSize: FontSizes.bodyMedium,
-                        fontFamily: 'Museo Sans',
-                        fontWeight: FontWeight.w400,
-                        color: UIColor.textGreen,
-                      )),
+                  style: CustomTextStyle.museo(context, FontSizes.bodyMedium,
+                      FontWeight.w400, UIColor.textGreen)),
               const Icon(
                 Icons.keyboard_arrow_right,
                 color: UIColor.textGreen,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/dimens.dart';
 import 'package:flutter_elo7/constants/strings.dart';
-import 'package:flutter_elo7/constants/ui_color.dart';
-import 'package:flutter_elo7/widgets/rounded_image.dart';
+import 'package:flutter_elo7/constants/text_style.dart';
+import 'package:flutter_elo7/widgets/rounded_corners_image.dart';
 
 class OurTeamWidget extends StatelessWidget {
   const OurTeamWidget({super.key});
@@ -19,12 +19,8 @@ class OurTeamWidget extends StatelessWidget {
                 width: ProjectSizes.screenWidth,
                 child: Text(Strings.meetOurTeam,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          fontSize: FontSizes.title,
-                          fontFamily: 'Museo Sans',
-                          fontWeight: FontWeight.w600,
-                          color: UIColor.textBlack,
-                        ))),
+                    style: CustomTextStyle.museo(
+                        context, FontSizes.title, FontWeight.w600))),
             const SizedBox(height: ProjectSizes.mediumPadding),
             const RoundedBorderImage("assets/images/team1.jpg"),
             const SizedBox(height: ProjectSizes.smallPadding),

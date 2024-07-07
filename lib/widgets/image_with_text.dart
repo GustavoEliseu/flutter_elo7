@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/dimens.dart';
+import 'package:flutter_elo7/constants/text_style.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
 
 class ImageWithTextWidget extends StatelessWidget {
@@ -15,12 +16,8 @@ class ImageWithTextWidget extends StatelessWidget {
       Center(
           child: Text(
         imageText,
-        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontSize: FontSizes.title,
-              fontFamily: 'Museo Sans',
-              fontWeight: FontWeight.w700,
-              color: UIColor.white,
-            ),
+        style: CustomTextStyle.museo(
+            context, FontSizes.title, FontWeight.w700, UIColor.white),
         overflow: TextOverflow.clip,
         maxLines: 1,
       )),

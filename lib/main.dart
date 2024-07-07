@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
-import 'package:flutter_elo7/screens/our_team.dart';
-import 'package:flutter_elo7/screens/seller_word.dart';
-import 'package:flutter_elo7/screens/work_with_us.dart';
+import 'package:flutter_elo7/screens/our_team_screen.dart';
+import 'package:flutter_elo7/screens/results_screen.dart';
+import 'package:flutter_elo7/screens/seller_word_screen.dart';
+import 'package:flutter_elo7/screens/work_with_us_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: BoxDecoration(color: UIColor.white),
                 child:
                     SizedBox(width: double.infinity, child: OurTeamWidget())),
+            DecoratedBox(
+                decoration: BoxDecoration(color: UIColor.backgroundYellow),
+                child:
+                    SizedBox(width: double.infinity, child: ResultsWidget())),
             SizedBox(height: 64),
           ],
         )),
