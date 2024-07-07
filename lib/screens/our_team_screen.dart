@@ -12,22 +12,23 @@ class OurTeamWidget extends StatelessWidget {
     return Container(
         width: ProjectSizes.screenWidth,
         padding: const EdgeInsets.only(
-            top: ProjectSizes.largePadding, bottom: ProjectSizes.largePadding),
+            top: ProjectSizes.largePadding,
+            bottom: ProjectSizes.largePadding), //40px
         child: Column(
           children: [
             SizedBox(
-                width: ProjectSizes.screenWidth,
+                width: ProjectSizes.screenWidth, //328 px
                 child: Text(Strings.meetOurTeam,
                     textAlign: TextAlign.center,
                     style: CustomTextStyle.museo(
                         context, FontSizes.title, FontWeight.w600))),
-            const SizedBox(height: ProjectSizes.mediumPadding),
+            const SizedBox(height: ProjectSizes.mediumPadding), //32pix
             const RoundedBorderImage("assets/images/team1.jpg"),
-            const SizedBox(height: ProjectSizes.smallPadding),
+            const SizedBox(height: ProjectSizes.smallPadding), //24pix
             const RoundedBorderImage("assets/images/team2.jpg"),
-            const SizedBox(height: ProjectSizes.smallPadding),
+            const SizedBox(height: ProjectSizes.smallPadding), //24pix
             const RoundedBorderImage("assets/images/team3.jpg"),
-            const SizedBox(height: ProjectSizes.smallPadding),
+            const SizedBox(height: ProjectSizes.smallPadding), //24pix
             const RoundedBorderImage("assets/images/team4.jpg"),
           ],
         ));

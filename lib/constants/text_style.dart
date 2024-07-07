@@ -10,8 +10,8 @@ class CustomTextStyle {
     return Theme.of(context).textTheme.titleLarge?.copyWith(
           fontSize: fontSize ?? FontSizes.bodySmall,
           fontFamily: 'Museo Sans',
-          fontWeight: FontWeight.w400,
-          color: UIColor.textBlack,
+          fontWeight: weight ?? FontWeight.w400,
+          color: color ?? UIColor.textBlack,
         );
   }
 }
