@@ -17,9 +17,7 @@ class WorkWithUsWidget extends StatelessWidget {
               width: 360,
               child: ImageWithTextWidget(
                   'assets/images/work_with_us.png', Strings.workWithUs)),
-          const SizedBox(
-            height: 32,
-          ),
+          const SizedBox(height: 32),
           SizedBox(
               width: 328,
               child: Center(
@@ -55,9 +53,7 @@ class WorkWithUsWidget extends StatelessWidget {
               //TODO - add onClick
             },
           ),
-          const SizedBox(
-            height: 32,
-          ),
+          const SizedBox(height: 32),
         ],
       ),
     );

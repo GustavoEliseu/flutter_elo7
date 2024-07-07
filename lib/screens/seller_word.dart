@@ -36,7 +36,7 @@ class SellerWordWidget extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         color: UIColor.textYellow,
                       ))),
-          const SizedBox(height: ProjectSizes.mediumPadding),
+          const SizedBox(height: ProjectSizes.smallPadding),
           SizedBox(
               width: ProjectSizes.screenWidth,
               child: Text(Strings.donecInSeller,

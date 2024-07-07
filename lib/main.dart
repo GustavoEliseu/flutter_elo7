@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
+import 'package:flutter_elo7/screens/our_team.dart';
 import 'package:flutter_elo7/screens/seller_word.dart';
 import 'package:flutter_elo7/screens/work_with_us.dart';
 
@@ -50,6 +51,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: BoxDecoration(color: UIColor.backgroundGray),
                 child: SizedBox(
                     width: double.infinity, child: SellerWordWidget())),
+            DecoratedBox(
+                decoration: BoxDecoration(color: UIColor.white),
+                child:
+                    SizedBox(width: double.infinity, child: OurTeamWidget())),
             SizedBox(height: 64),
           ],
         )),
