@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/dimens.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';

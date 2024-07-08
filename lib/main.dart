@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
+import 'package:flutter_elo7/screens/open_jobs_screen.dart';
 import 'package:flutter_elo7/screens/our_team_screen.dart';
 import 'package:flutter_elo7/screens/results_screen.dart';
 import 'package:flutter_elo7/screens/seller_word_screen.dart';
@@ -58,8 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(width: double.infinity, child: OurTeamWidget())),
             DecoratedBox(
                 decoration: BoxDecoration(color: UIColor.backgroundYellow),
-                child:
-                    SizedBox(width: double.infinity, child: ResultsWidget())),
+                child: SizedBox(
+                    width: double.infinity, child: ResultsScreenWidget())),
+            Image(image: AssetImage("assets/images/openJobs.jpg")),
+            DecoratedBox(
+                decoration: BoxDecoration(color: UIColor.white),
+                child: SizedBox(
+                    width: double.infinity, child: OpenJobsScreenWidget())),
             SizedBox(height: 64),
           ],
         )),

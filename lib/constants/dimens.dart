@@ -18,4 +18,5 @@ class ProjectSizes {
   static const double mediumPadding = 32;
   static const double smallPadding = 24;
   static const double sidePadding = 16;
+  static const double jobPadding = 12;
 }
