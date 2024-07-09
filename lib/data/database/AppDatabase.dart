@@ -7,6 +7,10 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
+/*
+Classe adaptada do projeto: https://github.com/Anonymousgaurav/bloc_clean_architecture/tree/develop/futter_db
+Partes do código pertencem a Gaurav Kumar.
+*/
 class AppDatabase {
   static final AppDatabase dbProvider = AppDatabase();
   static const DATABASE_NAME = "JOBS_DATABASE.db";

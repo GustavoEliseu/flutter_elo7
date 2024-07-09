@@ -1,5 +1,8 @@
 // ignore_for_file: constant_identifier_names
-
+/*
+Classe adaptada do projeto: https://github.com/Anonymousgaurav/bloc_clean_architecture/tree/develop/futter_db
+Partes do código pertencem a Gaurav Kumar.
+*/
 abstract class ErrorCodes {
   static const int API_ERROR = 1;
   static const int DATA_ERROR = 2;

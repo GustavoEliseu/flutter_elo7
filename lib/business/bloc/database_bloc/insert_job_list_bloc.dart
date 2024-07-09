@@ -6,6 +6,10 @@ import 'package:flutter_elo7/models/dto/jobs/add_jobs_dto.dart';
 import 'package:flutter_elo7/utils/exceptions/DataException.dart';
 import 'dart:developer';
 
+/*
+Classe adaptada do projeto: https://github.com/Anonymousgaurav/bloc_clean_architecture/tree/develop/futter_db
+Partes do código pertencem a Gaurav Kumar.
+*/
 class InsertJobListBloc extends BaseBloc<AddJobsDTO, bool> {
   final IJobsRepo _repo = JobsRepoImpl();
   InsertJobListBloc(initialState);
