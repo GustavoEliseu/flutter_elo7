@@ -9,6 +9,10 @@ import 'package:flutter_elo7/models/dto/resources_result.dart';
 import 'package:flutter_elo7/models/job.dart';
 import 'package:flutter_elo7/utils/exceptions/DataException.dart';
 
+/*
+Classe adaptada do projeto: https://github.com/Anonymousgaurav/bloc_clean_architecture/tree/develop/futter_db
+Partes do código pertencem a Gaurav Kumar.
+*/
 class QueryJobListBloc extends BaseBloc<QueryJobsDTO, List<Job>> {
   final IJobsRepo _repo = JobsRepoImpl();
   QueryJobListBloc(initialState);

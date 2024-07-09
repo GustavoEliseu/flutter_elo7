@@ -1,5 +1,9 @@
 import 'package:flutter_elo7/models/dto/error_model.dart';
 
+/*
+Classe adaptada do projeto: https://github.com/Anonymousgaurav/bloc_clean_architecture/tree/develop/futter_db
+Partes do código pertencem a Gaurav Kumar.
+*/
 class ResourceResult<T> {
   ResourceState? state;
   T? data;
