@@ -7,6 +7,7 @@ import 'package:flutter_elo7/screens/seller_word_screen.dart';
 import 'package:flutter_elo7/screens/work_with_us_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

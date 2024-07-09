@@ -46,6 +46,7 @@ class ResultsScreenWidget extends StatelessWidget {
   Widget _qualityWidget(BuildContext context) {
     return Column(children: [
       const CircleImage("assets/images/quality.png"),
+      const SizedBox(height: ProjectSizes.smallPadding), //24px
       Text(Strings.lifeQuality,
           textAlign: TextAlign.center,
           style: CustomTextStyle.museo(

@@ -1,33 +1,45 @@
 import 'dart:convert';
 import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+@JsonSerializable(explicitToJson: true)
 class Job extends Equatable {
+  final int? id;
   final String title;
   final String type;
   final String level;
   final String? location;
-  final bool isActive;
+  final bool is_active;
 
   const Job(
-      {this.location,
+      {this.id,
+      this.location,
       required this.title,
       required this.type,
       required this.level,
-      required this.isActive});
+      required this.is_active});
+
+  const Job.empty()
+      : id = -1,
+        location = null,
+        title = "",
+        type = "",
+        level = "",
+        is_active = false;
 
   @override
   String toString() {
-    return 'Job(title: $title, type: $type, level: $level, location: $location, isActive: $isActive)';
+    return 'Job(title: $title, type: $type, level: $level, location: $location, is_active: $is_active)';
   }
 
   //Json Mapping and conversion
   Map<String, dynamic> toMap() {
     return {
-      'title': title,
+      "title": title,
       "type": type,
       "level": level,
       "location": location,
-      "is_active": isActive
+      "is_active": is_active ? 1 : 0
     };
   }
 
@@ -37,12 +49,12 @@ class Job extends Equatable {
         type: myMap['type'],
         level: myMap['level'] ?? "",
         location: myMap['location'] ?? "Remoto",
-        isActive: myMap['is_active'] == "true");
+        is_active: myMap['is_active'] == true);
   }
 
   String toJson() => json.encode(toMap());
   factory Job.fromJson(String source) => Job.fromMap(json.decode(source));
 
   @override
-  List<Object?> get props => [title, type, level, location, isActive];
+  List<Object?> get props => [title, type, level, location, is_active];
 }

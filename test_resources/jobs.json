@@ -1,0 +1,88 @@
+{
+    "jobs": [
+        {
+            "title": "especialista de fp&a",
+            "type": "financeiro",
+            "level": "especialista",
+            "location": "são paulo, sp, brasil",
+            "is_active": true
+        },
+        {
+            "title": "estágio em riscos e controles internos",
+            "type": "controles internos",
+            "level": "estágio",
+            "location": "são paulo, sp, brasil",
+            "is_active": true
+        },
+        {
+            "title": "gerente de produto",
+            "type": "produto",
+            "level": "pleno",
+            "location": "são paulo, sp, brasil",
+            "is_active": true
+        },
+        {
+            "title": "pessoa analista de data analytics",
+            "type": "engenharia",
+            "level": "pleno",
+            "location": "são paulo, sp, brasil",
+            "is_active": true
+        },
+        {
+            "title": "pessoa analista de gestão de parceiros",
+            "type": "operacional",
+            "level": "senior",
+            "location": "são paulo, sp, brasil",
+            "is_active": true
+        },
+        {
+            "title": "pessoa coordenadora de engenharia de dados",
+            "type": "engenharia",
+            "level": "senior",
+            "location": null,
+            "is_active": true
+        },
+        {
+            "title": "pessoa engenheira de dados",
+            "type": "engenharia",
+            "level": "junior",
+            "location": null,
+            "is_active": true
+        },
+        {
+            "title": "pessoa engenheira de sre/devops",
+            "type": "engenharia",
+            "level": "senior",
+            "location": null,
+            "is_active": true
+        },
+        {
+            "title": "pessoa engenheira devops",
+            "type": "engenharia",
+            "level": "pleno",
+            "location": null,
+            "is_active": true
+        },
+        {
+            "title": "pessoa desenvolvedora front-end",
+            "type": "engenharia",
+            "level": "senior",
+            "location": null,
+            "is_active": true
+        },
+        {
+            "title": "pessoa desenvolvedora mobile (android e ios)",
+            "type": "engenharia",
+            "level": "senior",
+            "location": null,
+            "is_active": false
+        },
+        {
+            "title": "pessoa desenvolvedora java",
+            "type": "engenharia",
+            "level": "pleno",
+            "location": null,
+            "is_active": false
+        }
+    ]
+}
