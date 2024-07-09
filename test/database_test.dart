@@ -81,7 +81,7 @@ void main() {
     expect(databaseQueryPage2.first.title, "pessoa analista de data analytics");
   });
 
-  test('Querry Database Paginated', () async {
+  test('Querry Database Paginated with Term', () async {
     List<Job> databaseQuery =
         await repo.getActiveJobsPaginated(0, queryTerm: "pessoa");
 
@@ -91,6 +91,6 @@ void main() {
 
     List<Map<String, Object?>> databaseQuery2 = await data.query(
         '${JobsTable.JOBS_TABLE_NAME} WHERE ${JobsTable.JOBS_TITLE} LIKE "%pessoa%"');
-    expect(databaseQuery2.length, 8);
+    expect(databaseQuery2.length, 9);
   });
 }
