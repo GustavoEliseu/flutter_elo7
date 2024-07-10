@@ -5,35 +5,13 @@ import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_bloc.dart';
 import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_exists_bloc.dart';
 import 'package:flutter_elo7/business/bloc/dio_bloc/request_jobs_bloc.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
-import 'package:flutter_elo7/screens/main_route/main_route.dart';
 import 'package:flutter_elo7/screens/main_route/open_jobs_screen.dart';
 import 'package:flutter_elo7/screens/main_route/our_team_screen.dart';
 import 'package:flutter_elo7/screens/main_route/results_screen.dart';
 import 'package:flutter_elo7/screens/main_route/seller_word_screen.dart';
 import 'package:flutter_elo7/screens/main_route/work_with_us_screen.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-/*class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
@@ -88,4 +66,3 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 }
-*/

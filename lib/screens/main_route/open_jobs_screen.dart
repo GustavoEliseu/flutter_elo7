@@ -11,6 +11,7 @@ import 'package:flutter_elo7/constants/ui_color.dart';
 import 'package:flutter_elo7/data/repository/repo/JobsRepoImpl.dart';
 import 'package:flutter_elo7/models/job.dart';
 import 'package:flutter_elo7/models/network/data_state.dart';
+import 'package:flutter_elo7/screens/webview_route/webview_route.dart';
 import 'package:flutter_elo7/widgets/custom_stateless_widgets/open_job_widget.dart';
 
 class OpenJobsScreenStatefulWidget extends StatefulWidget {
@@ -165,9 +166,12 @@ class _OpenJobsScreenStatefulWidget
               itemBuilder: (context, index) {
                 return InkWell(
                     onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(jobs[index].title),
-                      ));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                WebViewRoute(jobTitle: jobs[index].title)),
+                      );
                     },
                     child:
                         OpenJobWidget(jobs[index].title, jobs[index].location));
@@ -176,7 +180,9 @@ class _OpenJobsScreenStatefulWidget
                 return const Divider();
               }),
 
+          if (jobs.isEmpty) const SizedBox(height: ProjectSizes.mediumPadding),
           if (jobs.isEmpty) const Text("Todas as vagas foram exibidas"),
+          if (jobs.isEmpty) const SizedBox(height: ProjectSizes.mediumPadding),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
