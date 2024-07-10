@@ -21,6 +21,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final ScrollController _scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -30,39 +31,50 @@ class _MyHomePageState extends State<MyHomePage> {
           BlocProvider(create: (_) => QueryJobListBloc()),
           BlocProvider(create: (_) => QueryJobExistBloc()),
         ],
-        child: const Scaffold(
+        child: Scaffold(
           //appBar: AppBar(),
           body: Center(
             child: SingleChildScrollView(
+                controller: _scrollController,
                 child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(height: 64),
-                DecoratedBox(
-                    decoration: BoxDecoration(color: UIColor.white),
-                    child: WorkWithUsWidget()),
-                DecoratedBox(
-                    decoration: BoxDecoration(color: UIColor.backgroundGray),
-                    child: SizedBox(
-                        width: double.infinity, child: SellerWordWidget())),
-                DecoratedBox(
-                    decoration: BoxDecoration(color: UIColor.white),
-                    child: SizedBox(
-                        width: double.infinity, child: OurTeamWidget())),
-                DecoratedBox(
-                    decoration: BoxDecoration(color: UIColor.backgroundYellow),
-                    child: SizedBox(
-                        width: double.infinity, child: ResultsScreenWidget())),
-                Image(image: AssetImage("assets/images/openJobs.jpg")),
-                DecoratedBox(
-                    decoration: BoxDecoration(color: UIColor.white),
-                    child: SizedBox(
-                        width: double.infinity,
-                        child: OpenJobsScreenStatefulWidget())),
-                SizedBox(height: 64),
-              ],
-            )),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const SizedBox(height: 64),
+                    DecoratedBox(
+                        decoration: const BoxDecoration(color: UIColor.white),
+                        child: WorkWithUsWidget(callback: scrollToJobs)),
+                    const DecoratedBox(
+                        decoration:
+                            BoxDecoration(color: UIColor.backgroundGray),
+                        child: SizedBox(
+                            width: double.infinity, child: SellerWordWidget())),
+                    const DecoratedBox(
+                        decoration: BoxDecoration(color: UIColor.white),
+                        child: SizedBox(
+                            width: double.infinity, child: OurTeamWidget())),
+                    const DecoratedBox(
+                        decoration:
+                            BoxDecoration(color: UIColor.backgroundYellow),
+                        child: SizedBox(
+                            width: double.infinity,
+                            child: ResultsScreenWidget())),
+                    const Image(
+                        image: AssetImage("assets/images/openJobs.jpg")),
+                    const DecoratedBox(
+                        decoration: BoxDecoration(color: UIColor.white),
+                        child: SizedBox(
+                            width: double.infinity,
+                            child: OpenJobsScreenStatefulWidget())),
+                  ],
+                )),
           ),
         ));
+  }
+
+  void scrollToJobs() {
+    _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent - 100,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.ease);
   }
 }

@@ -59,18 +59,28 @@ class ResultsScreenWidget extends StatelessWidget {
               style: CustomTextStyle.museo(context, FontSizes.bodyMedium,
                   FontWeight.w400, UIColor.textGray))),
       const SizedBox(height: ProjectSizes.smallPadding), //24px
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(Strings.dignissim,
-              textAlign: TextAlign.center,
-              style: CustomTextStyle.museo(context, FontSizes.bodyMedium,
-                  FontWeight.w400, UIColor.textGreen)),
-          const Icon(
-            Icons.keyboard_arrow_right,
-            color: UIColor.textGreen,
-          )
-        ],
+      InkWell(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(Strings.dignissim,
+                textAlign: TextAlign.center,
+                style: CustomTextStyle.museo(context, FontSizes.bodyMedium,
+                    FontWeight.w400, UIColor.textGreen)),
+            const Icon(
+              Icons.keyboard_arrow_right,
+              color: UIColor.textGreen,
+            )
+          ],
+        ),
+        onTap: () {
+          final scaffold = ScaffoldMessenger.of(context);
+          scaffold.showSnackBar(SnackBar(
+            content: const Text("Pretend i did something!!!"),
+            action: SnackBarAction(
+                label: 'Dismiss', onPressed: scaffold.hideCurrentSnackBar),
+          ));
+        },
       )
     ]);
   }
