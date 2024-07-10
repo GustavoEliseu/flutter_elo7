@@ -17,4 +17,9 @@ class JobsRepoImpl implements IJobsRepo {
       {String? queryTerm}) async {
     return await jobsDAO.getActiveJobsPaginated(page, queryTerm);
   }
+
+  @override
+  Future<bool> checkIfThereAreLocalJobs() async {
+    return await jobsDAO.checkIfThereAreLocalJobs();
+  }
 }

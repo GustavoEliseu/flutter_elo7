@@ -3,7 +3,7 @@ import 'package:flutter_elo7/constants/dimens.dart';
 import 'package:flutter_elo7/constants/strings.dart';
 import 'package:flutter_elo7/constants/text_style.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
-import 'package:flutter_elo7/widgets/rounded_corners_image_widget.dart';
+import 'package:flutter_elo7/widgets/custom_stateless_widgets/rounded_corners_image_widget.dart';
 
 class SellerWordWidget extends StatelessWidget {
   const SellerWordWidget({super.key});

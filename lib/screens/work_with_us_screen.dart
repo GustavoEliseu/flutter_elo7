@@ -3,7 +3,7 @@ import 'package:flutter_elo7/constants/dimens.dart';
 import 'package:flutter_elo7/constants/strings.dart';
 import 'package:flutter_elo7/constants/text_style.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
-import 'package:flutter_elo7/widgets/image_with_text_widget.dart';
+import 'package:flutter_elo7/widgets/custom_stateless_widgets/image_with_text_widget.dart';
 
 class WorkWithUsWidget extends StatelessWidget {
   const WorkWithUsWidget({super.key});

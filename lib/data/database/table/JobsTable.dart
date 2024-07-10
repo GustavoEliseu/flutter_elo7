@@ -14,7 +14,7 @@ class JobsTable {
   static void createTable(Database database, int version) async {
     await database.execute('''
       CREATE TABLE IF NOT EXISTS $JOBS_TABLE_NAME (
-        $JOBS_ID INTEGER,
+        $JOBS_ID INTEGER NOT NULL,
         $JOBS_TITLE TEXT NOT NULL,
         $JOBS_TYPE TEXT NOT NULL,
         $JOBS_LEVEL TEXT NOT NULL,

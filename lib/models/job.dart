@@ -8,12 +8,12 @@ class Job extends Equatable {
   final String title;
   final String type;
   final String level;
-  final String? location;
+  final String location;
   final bool is_active;
 
   const Job(
       {this.id,
-      this.location,
+      required this.location,
       required this.title,
       required this.type,
       required this.level,
@@ -21,7 +21,7 @@ class Job extends Equatable {
 
   const Job.empty()
       : id = -1,
-        location = null,
+        location = "",
         title = "",
         type = "",
         level = "",
@@ -45,6 +45,7 @@ class Job extends Equatable {
 
   factory Job.fromMap(Map<String, dynamic> myMap) {
     return Job(
+        id: myMap['id'],
         title: myMap['title'] ?? "",
         type: myMap['type'],
         level: myMap['level'] ?? "",

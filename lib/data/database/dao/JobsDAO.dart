@@ -1,9 +1,11 @@
 import 'package:flutter_elo7/models/job.dart';
 import 'package:flutter_elo7/data/database/AppDatabase.dart';
 import 'package:flutter_elo7/data/database/table/JobsTable.dart';
+import 'package:sqflite/sqflite.dart';
 
 class JobsDAO {
   final AppDatabase dbProvider;
+  final int pageSize = 5;
 
   JobsDAO([AppDatabase? dbProvider])
       : dbProvider = dbProvider ?? AppDatabase.dbProvider;
@@ -17,7 +19,10 @@ class JobsDAO {
     }
     final db = await dbProvider.database;
     var res = await db.query(JobsTable.JOBS_TABLE_NAME,
-        where: whereTerm, whereArgs: whereArgs, offset: page * 3, limit: 3);
+        where: whereTerm,
+        whereArgs: whereArgs,
+        offset: page * pageSize,
+        limit: pageSize);
 
     List<Job>? jobs =
         res.isNotEmpty ? res.map((row) => Job.fromMap(row)).toList() : [];
@@ -38,5 +43,13 @@ class JobsDAO {
     }
 
     return result != 0;
+  }
+
+  Future<bool> checkIfThereAreLocalJobs() async {
+    final db = await dbProvider.database;
+    int? res = Sqflite.firstIntValue(
+        await db.rawQuery('SELECT COUNT(*) FROM ${JobsTable.JOBS_TABLE_NAME}'));
+
+    return (res ?? -1) > 0;
   }
 }
