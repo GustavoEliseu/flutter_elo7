@@ -13,4 +13,5 @@ class UIColor {
   static const Color textGreen = Color(0xff008B90);
   static const Color textYellow = Color(0xffD99F2C);
   static const Color textGray = Color(0xff57575C);
+  static const Color textHint = Color(0xffC8C8CC); //equal to divider gray
 }

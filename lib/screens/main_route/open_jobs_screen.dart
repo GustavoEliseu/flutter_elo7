@@ -12,6 +12,7 @@ import 'package:flutter_elo7/data/repository/repo/JobsRepoImpl.dart';
 import 'package:flutter_elo7/models/job.dart';
 import 'package:flutter_elo7/models/network/data_state.dart';
 import 'package:flutter_elo7/screens/webview_route/webview_route.dart';
+import 'package:flutter_elo7/utils/debouncer.dart';
 import 'package:flutter_elo7/widgets/custom_stateless_widgets/open_job_widget.dart';
 
 class OpenJobsScreenStatefulWidget extends StatefulWidget {
@@ -143,16 +144,41 @@ class _OpenJobsScreenStatefulWidget
   }
 
   Widget stateIsLoaded(List<Job> jobs) {
+    final _debouncer = Debouncer(milliseconds: 500);
     return Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //SEARCH PLACEHOLDER
-          Container(
-              height: ProjectSizes.smallPadding,
-              color: UIColor.backgroundGray), // PLACEHOLDER
+          const SizedBox(height: ProjectSizes.smallPadding), //24px
+          TextField(
+            decoration: InputDecoration(
+                suffixIcon: Image.asset('assets/images/ic_search.png'),
+                hintText: Strings.search_hint,
+                hintStyle: CustomTextStyle.museo(context, FontSizes.bodySmall,
+                    FontWeight.w400, UIColor.textHint),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                )),
+            keyboardType: TextInputType.multiline,
+            onChanged: (value) => {
+              _debouncer.run(() {
+                if (value != _term) {
+                  _term = value;
+                  _page = 0;
+                  _queryJobsListBloc.add(
+                      LocalQueryJobsEvent(jobsRepo, _page, queryTerm: _term));
+                }
+              })
+            },
+            onTapOutside: (event) {
+              FocusScope.of(context).requestFocus(FocusNode());
+            },
+            //...
+          ), // PLACEHOLDER
 
-          const SizedBox(height: ProjectSizes.mediumPadding), //40px
+          const SizedBox(height: ProjectSizes.mediumPadding), //32px
           Text(Strings.development,
               textAlign: TextAlign.start,
               style: CustomTextStyle.museo(
