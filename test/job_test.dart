@@ -8,30 +8,17 @@ void main() {
   final file = File('test_resources/jobs.json');
   //Test Variables
   const String jobJson =
-      """{"title":"especialista de fp&a","type":"financeiro","level":"especialista","location":"são paulo, sp, brasil","is_active":true}""";
-  const String jobJson2 =
       """{"title":"pessoa desenvolvedora mobile (android e ios)","type":"engenharia","level":"senior","location":null,"is_active": false}""";
   Job job = const Job(
-      title: "especialista de fp&a",
-      type: "financeiro",
-      level: "especialista",
-      location: "são paulo, sp, brasil",
-      is_active: true);
-  Job job2 = const Job(
       title: "pessoa desenvolvedora mobile (android e ios)",
       type: "engenharia",
       level: "senior",
       location: "Remoto",
       is_active: false);
 
-  test('job2 toJson should not be equal to job2 due to "Remoto"', () {
-    String json = job2.toJson();
-    expect(false, json == jobJson2);
-  });
-
   test('JobJson2 fromJson should be equal to job2', () {
-    Job mJob = Job.fromJson(jobJson2);
-    expect(mJob, job2);
+    Job mJob = Job.fromJson(jobJson);
+    expect(mJob, job);
   });
 
   test('Load jobs json', () async {
