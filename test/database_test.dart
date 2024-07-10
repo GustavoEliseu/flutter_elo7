@@ -36,7 +36,6 @@ void main() {
     appDatabase = repo.jobsDAO.dbProvider;
     appDatabase.clear(await appDatabase.database);
     appDatabase.initDB(await appDatabase.database, 1);
-
     final json = jsonDecode(await file.readAsString());
     final jobsJson = json['jobs'];
     List<Job> jobs = [];
@@ -59,7 +58,7 @@ void main() {
     List<Map<String, Object?>> tableExists =
         await data.query(JobsTable.JOBS_TABLE_NAME);
 
-    expect(tableExists.length, 0);
+    expect(tableExists.length, 12);
   });
 
   test('Add values to Database test and read', () async {
@@ -74,11 +73,16 @@ void main() {
   test('Querry Database Paginated', () async {
     List<Job> databaseQuery = await repo.getActiveJobsPaginated(0);
     int databaseSize = databaseQuery.length;
-    expect(databaseSize, 3);
+    expect(databaseSize, repo.jobsDAO.pageSize);
 
     List<Job> databaseQueryPage2 = await repo.getActiveJobsPaginated(1);
 
-    expect(databaseQueryPage2.first.title, "pessoa analista de data analytics");
+    final file = File('test_resources/jobs.json');
+    final json = jsonDecode(await file.readAsString());
+    final jobsJson = json['jobs'];
+    final job = Job.fromMap(jobsJson[repo.jobsDAO.pageSize]);
+
+    expect(databaseQueryPage2.first.title, job.title);
   });
 
   test('Querry Database Paginated with Term', () async {

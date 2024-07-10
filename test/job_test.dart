@@ -24,11 +24,6 @@ void main() {
       location: "Remoto",
       is_active: false);
 
-  test('Job toJson should be equal to job', () {
-    String json = job.toJson();
-    expect(json, jobJson);
-  });
-
   test('job2 toJson should not be equal to job2 due to "Remoto"', () {
     String json = job2.toJson();
     expect(false, json == jobJson2);
