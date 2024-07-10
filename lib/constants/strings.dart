@@ -4,7 +4,7 @@ class Strings {
   static const String workWithUs = "trabalhe no elo7";
   static const String lorem =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et viverra orci. Praesent consequat dolor tellus, eget viverra risus hendrerit non. Sed rutrum condimentum maximus. Donec pellentesque libero eu eros sagittis.";
-  static const String openJobs = "vagas em aberto";
+  static const String openJobs = "Vagas em aberto";
 
   static const String sellerWord = "Palavra da vendedora";
   static const String sedRutrum = "Sed rutrum condimentum";
@@ -27,4 +27,7 @@ class Strings {
 
   static const String jobSearchTip = "nome da vaga";
   static const String development = "Desenvolvimento";
+
+  static const String next = "Next";
+  static const String previous = "Previous";
 }
