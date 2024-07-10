@@ -27,6 +27,7 @@ class Strings {
 
   static const String jobSearchTip = "nome da vaga";
   static const String development = "Desenvolvimento";
+  static const String search_hint = "nome da vaga";
 
   static const String next = "Next";
   static const String previous = "Previous";

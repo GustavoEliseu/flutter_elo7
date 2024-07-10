@@ -6,7 +6,8 @@ import 'package:flutter_elo7/constants/ui_color.dart';
 import 'package:flutter_elo7/widgets/custom_stateless_widgets/image_with_text_widget.dart';
 
 class WorkWithUsWidget extends StatelessWidget {
-  const WorkWithUsWidget({super.key});
+  const WorkWithUsWidget({super.key, required this.callback});
+  final VoidCallback callback;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class WorkWithUsWidget extends StatelessWidget {
               )
             ]),
             onTap: () {
-              //TODO - add onClick
+              callback();
             },
           ),
           const SizedBox(height: 32),
