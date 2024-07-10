@@ -2,11 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_elo7/data/interceptor/my_interceptor.dart';
 
 class DioClient {
-  static const String _baseUrl = "https://img.elo7.com.br/mock-vagas.json";
-
-  final Dio dio = Dio(
-    BaseOptions(baseUrl: _baseUrl),
-  );
+  final Dio dio = Dio();
 
   DioClient() {
     addInterceptor(LogInterceptor());
