@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_elo7/constants/dimens.dart';
 import 'package:flutter_elo7/constants/strings.dart';
 import 'package:flutter_elo7/constants/text_style.dart';
+import 'package:flutter_elo7/constants/ui_color.dart';
 import 'package:flutter_elo7/widgets/custom_stateless_widgets/rounded_corners_image_widget.dart';
 
 class OurTeamWidget extends StatelessWidget {
@@ -10,7 +11,8 @@ class OurTeamWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: ProjectSizes.screenWidth,
+        decoration: const BoxDecoration(color: UIColor.white),
+        width: double.infinity,
         padding: const EdgeInsets.only(
             top: ProjectSizes.largePadding,
             bottom: ProjectSizes.largePadding), //40px

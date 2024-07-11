@@ -11,6 +11,7 @@ class ResultsScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        decoration: const BoxDecoration(color: UIColor.backgroundYellow),
         padding: const EdgeInsets.only(
             top: ProjectSizes.largePadding,
             bottom: ProjectSizes.largePadding,

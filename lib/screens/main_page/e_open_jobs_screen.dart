@@ -52,6 +52,7 @@ class _OpenJobsScreenStatefulWidget
   @override
   Widget build(BuildContext context) {
     return Container(
+        decoration: const BoxDecoration(color: UIColor.white),
         padding: const EdgeInsets.only(
             top: ProjectSizes.largePadding,
             bottom: ProjectSizes.largePadding,

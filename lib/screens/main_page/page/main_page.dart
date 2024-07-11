@@ -4,7 +4,6 @@ import 'package:flutter_elo7/business/bloc/database_bloc/insert_jobs_bloc.dart';
 import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_bloc.dart';
 import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_exists_bloc.dart';
 import 'package:flutter_elo7/business/bloc/dio_bloc/request_jobs_bloc.dart';
-import 'package:flutter_elo7/constants/ui_color.dart';
 import 'package:flutter_elo7/screens/main_page/e_open_jobs_screen.dart';
 import 'package:flutter_elo7/screens/main_page/c_our_team_screen.dart';
 import 'package:flutter_elo7/screens/main_page/d_results_screen.dart';
@@ -40,31 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     const SizedBox(height: 64),
-                    DecoratedBox(
-                        decoration: const BoxDecoration(color: UIColor.white),
-                        child: WorkWithUsWidget(callback: scrollToJobs)),
-                    const DecoratedBox(
-                        decoration:
-                            BoxDecoration(color: UIColor.backgroundGray),
-                        child: SizedBox(
-                            width: double.infinity, child: SellerWordWidget())),
-                    const DecoratedBox(
-                        decoration: BoxDecoration(color: UIColor.white),
-                        child: SizedBox(
-                            width: double.infinity, child: OurTeamWidget())),
-                    const DecoratedBox(
-                        decoration:
-                            BoxDecoration(color: UIColor.backgroundYellow),
-                        child: SizedBox(
-                            width: double.infinity,
-                            child: ResultsScreenWidget())),
+                    WorkWithUsWidget(callback: scrollToJobs),
+                    const SellerWordWidget(),
+                    const OurTeamWidget(),
+                    const ResultsScreenWidget(),
                     const Image(
                         image: AssetImage("assets/images/openJobs.jpg")),
-                    const DecoratedBox(
-                        decoration: BoxDecoration(color: UIColor.white),
-                        child: SizedBox(
-                            width: double.infinity,
-                            child: OpenJobsScreenStatefulWidget())),
+                    const OpenJobsScreenStatefulWidget(),
                   ],
                 )),
           ),

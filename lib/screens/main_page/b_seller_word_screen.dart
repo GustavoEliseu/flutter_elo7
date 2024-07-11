@@ -11,31 +11,38 @@ class SellerWordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: ProjectSizes.screenWidth,
-        padding: const EdgeInsets.only(
-            top: ProjectSizes.largePadding, bottom: ProjectSizes.largePadding),
-        child: Column(children: [
-          const RoundedBorderImage("assets/images/seller_word.jpg"),
-          const SizedBox(height: ProjectSizes.largePadding),
-          SizedBox(
-              width: ProjectSizes.screenWidth,
-              child: Text(Strings.sellerWord,
-                  textAlign: TextAlign.start,
-                  style: CustomTextStyle.museo(
-                      context, FontSizes.bodyLarge, FontWeight.w600))),
-          SizedBox(
-              width: ProjectSizes.screenWidth,
-              child: Text(Strings.sedRutrum,
-                  textAlign: TextAlign.start,
-                  style: CustomTextStyle.museo(context, FontSizes.bodyMedium,
-                      FontWeight.w600, UIColor.textYellow))),
-          const SizedBox(height: ProjectSizes.smallPadding),
-          SizedBox(
-              width: ProjectSizes.screenWidth,
-              child: Text(Strings.donecInSeller,
-                  textAlign: TextAlign.start,
-                  style: CustomTextStyle.museo(
-                      context, FontSizes.bodySmall, FontWeight.w400))),
-        ]));
+        decoration: const BoxDecoration(color: UIColor.backgroundGray),
+        width: double.infinity,
+        child: Container(
+            width: ProjectSizes.screenWidth,
+            padding: const EdgeInsets.only(
+                top: ProjectSizes.largePadding,
+                bottom: ProjectSizes.largePadding),
+            child: Column(children: [
+              const RoundedBorderImage("assets/images/seller_word.jpg"),
+              const SizedBox(height: ProjectSizes.largePadding),
+              SizedBox(
+                  width: ProjectSizes.screenWidth,
+                  child: Text(Strings.sellerWord,
+                      textAlign: TextAlign.start,
+                      style: CustomTextStyle.museo(
+                          context, FontSizes.bodyLarge, FontWeight.w600))),
+              SizedBox(
+                  width: ProjectSizes.screenWidth,
+                  child: Text(Strings.sedRutrum,
+                      textAlign: TextAlign.start,
+                      style: CustomTextStyle.museo(
+                          context,
+                          FontSizes.bodyMedium,
+                          FontWeight.w600,
+                          UIColor.textYellow))),
+              const SizedBox(height: ProjectSizes.smallPadding),
+              SizedBox(
+                  width: ProjectSizes.screenWidth,
+                  child: Text(Strings.donecInSeller,
+                      textAlign: TextAlign.start,
+                      style: CustomTextStyle.museo(
+                          context, FontSizes.bodySmall, FontWeight.w400))),
+            ])));
   }
 }

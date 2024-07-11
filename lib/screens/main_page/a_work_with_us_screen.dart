@@ -11,7 +11,8 @@ class WorkWithUsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      decoration: const BoxDecoration(color: UIColor.white),
       child: Column(
         children: [
           const SizedBox(

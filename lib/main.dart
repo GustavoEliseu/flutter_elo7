@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_elo7/screens/main_route/route/main_route.dart';
+import 'package:flutter_elo7/screens/main_page/page/main_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
