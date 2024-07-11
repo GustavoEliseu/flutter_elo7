@@ -5,11 +5,11 @@ import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_bloc.dart';
 import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_exists_bloc.dart';
 import 'package:flutter_elo7/business/bloc/dio_bloc/request_jobs_bloc.dart';
 import 'package:flutter_elo7/constants/ui_color.dart';
-import 'package:flutter_elo7/screens/main_route/e_open_jobs_screen.dart';
-import 'package:flutter_elo7/screens/main_route/c_our_team_screen.dart';
-import 'package:flutter_elo7/screens/main_route/d_results_screen.dart';
-import 'package:flutter_elo7/screens/main_route/b_seller_word_screen.dart';
-import 'package:flutter_elo7/screens/main_route/a_work_with_us_screen.dart';
+import 'package:flutter_elo7/screens/main_page/e_open_jobs_screen.dart';
+import 'package:flutter_elo7/screens/main_page/c_our_team_screen.dart';
+import 'package:flutter_elo7/screens/main_page/d_results_screen.dart';
+import 'package:flutter_elo7/screens/main_page/b_seller_word_screen.dart';
+import 'package:flutter_elo7/screens/main_page/a_work_with_us_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

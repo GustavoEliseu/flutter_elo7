@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewRoute extends StatefulWidget {
-  const WebViewRoute({super.key, required this.jobTitle});
+class WebViewPage extends StatefulWidget {
+  const WebViewPage({super.key, required this.jobTitle});
   final String jobTitle;
 
   @override
-  State<WebViewRoute> createState() => _WebViewRouteState();
+  State<WebViewPage> createState() => _WebViewPageState();
 }
 
-class _WebViewRouteState extends State<WebViewRoute> {
+class _WebViewPageState extends State<WebViewPage> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 

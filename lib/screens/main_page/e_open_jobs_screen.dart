@@ -11,7 +11,7 @@ import 'package:flutter_elo7/constants/ui_color.dart';
 import 'package:flutter_elo7/data/repository/repo/JobsRepoImpl.dart';
 import 'package:flutter_elo7/models/job.dart';
 import 'package:flutter_elo7/models/network/data_state.dart';
-import 'package:flutter_elo7/screens/webview_route/webview_route.dart';
+import 'package:flutter_elo7/screens/webview_page/webview_page.dart';
 import 'package:flutter_elo7/utils/debouncer.dart';
 import 'package:flutter_elo7/widgets/custom_stateless_widgets/open_job_widget.dart';
 
@@ -196,7 +196,7 @@ class _OpenJobsScreenStatefulWidget
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                WebViewRoute(jobTitle: jobs[index].title)),
+                                WebViewPage(jobTitle: jobs[index].title)),
                       );
                     },
                     child:
