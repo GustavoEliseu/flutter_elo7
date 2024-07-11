@@ -21,13 +21,9 @@ FutureOr<void> onQueryJobsEvent(
     LocalQueryJobsEvent event, Emitter<DataState> emit) async {
   emit(InitialDataState());
   try {
-    await event.jobsRepo
-        .getActiveJobsPaginated(event.page, queryTerm: event.queryTerm)
-        .then((value) {
-      emit(LoadedDataState(value));
-    }).catchError((error) {
-      emit(ErrorDataState(error: error.toString()));
-    });
+    final response = await event.jobsRepo
+        .getActiveJobsPaginated(event.page, queryTerm: event.queryTerm);
+    emit(LoadedDataState(response));
   } catch (e) {
     emit(ErrorDataState(error: e.toString()));
   }

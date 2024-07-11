@@ -18,16 +18,12 @@ class RequestJobsBloc extends Bloc<DataEvent, DataState> {
     emit(InitialDataState());
     try {
       var client = DioClient();
-      await client.dio
-          .get("https://img.elo7.com.br/mock-vagas.json")
-          .then((value) {
-        List<Job> jobs = (value.data["jobs"] as List<dynamic>)
-            .map((x) => Job.fromMap(x))
-            .toList();
-        emit(LoadedDataState(jobs));
-      }).catchError((error) {
-        emit(ErrorDataState(error: error.toString()));
-      });
+      final response =
+          await client.dio.get("https://img.elo7.com.br/mock-vagas.json");
+      final jobs = (response.data["jobs"] as List<dynamic>)
+          .map((x) => Job.fromMap(x))
+          .toList();
+      emit(LoadedDataState(jobs));
     } catch (e) {
       emit(ErrorDataState(error: e.toString()));
     }

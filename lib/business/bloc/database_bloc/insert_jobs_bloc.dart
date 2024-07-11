@@ -22,11 +22,8 @@ FutureOr<void> onInsertJobsEvent(
     InsertingJobsEvent event, Emitter<DataState> emit) async {
   emit(InitialDataState());
   try {
-    await event.jobsRepo.addJobs(event.jobs).then((value) {
-      emit(LoadedDataState(value));
-    }).catchError((error) {
-      emit(ErrorDataState(error: error.toString()));
-    });
+    final response = await event.jobsRepo.addJobs(event.jobs);
+    emit(LoadedDataState(response));
   } catch (e) {
     emit(ErrorDataState(error: e.toString()));
   }
