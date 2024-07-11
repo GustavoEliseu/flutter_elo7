@@ -10,6 +10,10 @@ Ao realizar testes do genero, é de meu interesse estudar tecnologias que não c
 * Separei a tela disponibilizada no figma em 5 seções, criando widgets reaproveitaveis para algumas partes. As seçõres estão em screens/main_route e estão nomeadas de acordo com a ordem que aparecem no figma de A_ até E_. </br>
 * Como informado na seção contexto, como o projeto foi utilizado para estudos a classe _OpenJobsScreenStatefulWidget acabou ficando mais complexa do que o desejado, podendo ser dividida ou refatorada se houver tempo. </br>
 
+## Mudanças importantes pendentes
+ * Separar a lógica de requisições para um controlador ou usecase fora da Ui na classe OpenJobs
+ * Criar constantes para as URI's das imagens assets
+
 ## Realizado: </br>
  * Layout fiel ao figma, seguindo as margens e pixels exatos. 
  * Acesso ao WebView demonstrando o item clicado
