@@ -40,6 +40,10 @@ class _OpenJobsScreenStatefulWidget
     _queryJobsExistsBloc = BlocProvider.of<QueryJobExistBloc>(context);
     _queryJobsListBloc = BlocProvider.of<QueryJobListBloc>(context);
     _insertJobsBloc = BlocProvider.of<InsertJobsBloc>(context);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _requestJobsBloc.onRequestJobsEvent();
+    });
   }
 
   @override
@@ -66,11 +70,11 @@ class _OpenJobsScreenStatefulWidget
                   style: CustomTextStyle.museo(
                       context, FontSizes.title, FontWeight.w600)),
               BlocBuilder<QueryJobExistBloc, DataState?>(
-                  bloc: _queryJobsExistsBloc
-                    ..add(LocalQueryJobsExistsEvent(jobsRepo)),
+                  bloc: _queryJobsExistsBloc,
                   builder: (context, state) {
                     switch (state.runtimeType) {
                       case InitialDataState:
+                        _queryJobsExistsBloc.onQueryJobs(jobsRepo);
                         return stateIsLoading();
                       case LoadedDataState:
                         if ((state as LoadedDataState).data) {
@@ -88,19 +92,19 @@ class _OpenJobsScreenStatefulWidget
 
   Widget httpRequestWidget() {
     return BlocBuilder<RequestJobsBloc, DataState?>(
-        bloc: _requestJobsBloc..add(RequestJobsEvent()),
+        bloc: _requestJobsBloc,
         builder: (context, state) {
           switch (state.runtimeType) {
             case InitialDataState:
               return stateIsLoading();
             case LoadedDataState:
               return BlocBuilder<InsertJobsBloc, DataState?>(
-                  bloc: _insertJobsBloc
-                    ..add(InsertingJobsEvent(
-                        jobsRepo, (state as LoadedDataState).data)),
+                  bloc: _insertJobsBloc,
                   builder: (context, stateSave) {
                     switch (stateSave.runtimeType) {
                       case InitialDataState:
+                        _insertJobsBloc.insertJobs(
+                            jobsRepo, (state as LoadedDataState).data);
                         return stateIsLoading();
                       case LoadedDataState:
                         return databaseRequestWidget();
@@ -117,11 +121,12 @@ class _OpenJobsScreenStatefulWidget
 
   Widget databaseRequestWidget() {
     return BlocBuilder<QueryJobListBloc, DataState?>(
-        bloc: _queryJobsListBloc
-          ..add(LocalQueryJobsEvent(jobsRepo, _page, queryTerm: _term)),
+        bloc: _queryJobsListBloc,
         builder: (context, state) {
           switch (state.runtimeType) {
             case InitialDataState:
+              _queryJobsListBloc.onQueryJobsEvent(jobsRepo, _page,
+                  queryTerm: _term);
               return stateIsLoading();
             case LoadedDataState:
               firstPage = _page == 0;
@@ -168,8 +173,8 @@ class _OpenJobsScreenStatefulWidget
                 if (value != _term) {
                   _term = value;
                   _page = 0;
-                  _queryJobsListBloc.add(
-                      LocalQueryJobsEvent(jobsRepo, _page, queryTerm: _term));
+                  _queryJobsListBloc.onQueryJobsEvent(jobsRepo, _page,
+                      queryTerm: _term);
                 }
               })
             },
@@ -223,9 +228,8 @@ class _OpenJobsScreenStatefulWidget
                       onTap: () {
                         if (_page > 0) {
                           _page--;
-                          _queryJobsListBloc.add(LocalQueryJobsEvent(
-                              jobsRepo, _page,
-                              queryTerm: _term));
+                          _queryJobsListBloc.onQueryJobsEvent(jobsRepo, _page,
+                              queryTerm: _term);
                         }
                       },
                       child: Row(
@@ -250,9 +254,8 @@ class _OpenJobsScreenStatefulWidget
                       onTap: () {
                         if (!lastPage) {
                           _page++;
-                          _queryJobsListBloc.add(LocalQueryJobsEvent(
-                              jobsRepo, _page,
-                              queryTerm: _term));
+                          _queryJobsListBloc.onQueryJobsEvent(jobsRepo, _page,
+                              queryTerm: _term);
                         }
                       },
                       child: Row(

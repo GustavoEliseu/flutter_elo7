@@ -4,6 +4,7 @@ import 'package:flutter_elo7/business/bloc/database_bloc/insert_jobs_bloc.dart';
 import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_bloc.dart';
 import 'package:flutter_elo7/business/bloc/database_bloc/query_jobs_exists_bloc.dart';
 import 'package:flutter_elo7/business/bloc/dio_bloc/request_jobs_bloc.dart';
+import 'package:flutter_elo7/models/network/data_state.dart';
 import 'package:flutter_elo7/screens/main_page/e_open_jobs_screen.dart';
 import 'package:flutter_elo7/screens/main_page/c_our_team_screen.dart';
 import 'package:flutter_elo7/screens/main_page/d_results_screen.dart';
@@ -25,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (_) => InsertJobsBloc()),
+          BlocProvider(create: (_) => InsertJobsBloc(InitialDataState())),
           BlocProvider(create: (_) => RequestJobsBloc()),
           BlocProvider(create: (_) => QueryJobListBloc()),
           BlocProvider(create: (_) => QueryJobExistBloc()),
