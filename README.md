@@ -11,7 +11,7 @@ Ao realizar testes do genero, é de meu interesse estudar tecnologias que não c
 * Como informado na seção contexto, como o projeto foi utilizado para estudos a classe _OpenJobsScreenStatefulWidget acabou ficando mais complexa do que o desejado, podendo ser dividida ou refatorada se houver tempo. </br>
 
 ## Mudanças importantes pendentes
- * Tratamento de erro das requisições Http e de banco de dados. (Importante, causa telas brancas)
+ * Tratamento de erro das requisições de banco de dados. (Importante, causa telas brancas em emuladores)
  * Separar a lógica de requisições para um controlador ou usecase fora da Ui na classe OpenJobs
  * Criar constantes para as URI's das imagens assets
 
