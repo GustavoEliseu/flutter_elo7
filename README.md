@@ -33,5 +33,5 @@ Ao realizar testes do genero, é de meu interesse estudar tecnologias que não c
 * Injeção de dependencia, por experiência no android DI podem ser simples(Koin, Hilt) ou complexos(dagger2), para evitar problemas relacionados a tempo e garantir uma entrega completa evitei esta opção.
 
 ## Problemas detectados: </br>
-* Existe um problema no tratamento da requisição do Dio, em que algumas vezes um erro pode acontecer e a tela ficar branca, a solução é o tratamento da requisição do banco de dados e http.
+* Existe um problema provavelmente relacionado ao tratamento ao tentar acessar o arquivo do banco de dados, que em emuladores faz com que a aplicação inicie em uma tela branca. (Não tive oportunidade de analisar ao fundo o problema).
 
