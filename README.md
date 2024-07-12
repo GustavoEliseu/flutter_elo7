@@ -11,6 +11,7 @@ Ao realizar testes do genero, é de meu interesse estudar tecnologias que não c
 * Como informado na seção contexto, como o projeto foi utilizado para estudos a classe _OpenJobsScreenStatefulWidget acabou ficando mais complexa do que o desejado, podendo ser dividida ou refatorada se houver tempo. </br>
 
 ## Mudanças importantes pendentes
+ * Tratamento de erro das requisições Http e de banco de dados. (Importante, causa telas brancas)
  * Separar a lógica de requisições para um controlador ou usecase fora da Ui na classe OpenJobs
  * Criar constantes para as URI's das imagens assets
 
@@ -32,5 +33,5 @@ Ao realizar testes do genero, é de meu interesse estudar tecnologias que não c
 * Injeção de dependencia, por experiência no android DI podem ser simples(Koin, Hilt) ou complexos(dagger2), para evitar problemas relacionados a tempo e garantir uma entrega completa evitei esta opção.
 
 ## Problemas detectados: </br>
-* Existe um problema no tratamento da requisição do Dio, talvez tenha sido resolvido com a adição de permissão android e ios, não tive tempo de testar a solução.
+* Existe um problema no tratamento da requisição do Dio, em que algumas vezes um erro pode acontecer e a tela ficar branca, a solução é o tratamento da requisição do banco de dados e http.
 
